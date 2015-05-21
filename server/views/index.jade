@@ -1,0 +1,14 @@
+extends ../includes/layout
+
+block main-content
+  .container-fluid
+    .row
+      .header
+          a(href="/")
+            img.logo(src="img/icon2.png")
+          span(ng-include="'/partials/navigation-menu'")
+
+    section.content
+      div(ng-view)
+  
+    

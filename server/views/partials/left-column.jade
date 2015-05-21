@@ -1,0 +1,25 @@
+div
+  .list-group
+    a.list-group-item(href="#", ng-click="setDateRange('all')",class="all", ng-class="{'active':'all' == states.activeDateRange}") All
+      span.badge {{allTasks(tasks, states.category)}}
+    a.list-group-item(href="#", ng-click="setDateRange('today')", class="today", ng-class="{'active':'today' == states.activeDateRange}") Today
+      span.badge {{todayTasks(tasks, states.category)}}
+    a.list-group-item(href="#", ng-click="setDateRange('week')", class="week", ng-class="{'active':'week' == states.activeDateRange}") Next 7 days
+      span.badge {{weekTasks(tasks, states.category)}}
+    hr
+    button.btn.btn-default.listWidth(data-toggle="collapse", data-target=".collapsed")
+      span.pull-left List
+      span.pull-right.glyphicon.glyphicon-chevron-down
+    div.collapsed
+      a.list-group-item(href="#", ng-click="setCategory('work')", class="work", ng-class="{'active': 'work' == states.category}") Work
+        span.badge {{workTasks(tasks)}}
+      a.list-group-item(href="#", ng-click="setCategory('home')", class="home", ng-class="{'active': 'home' == states.category}") Home
+        span.badge {{homeTasks(tasks)}}
+    hr
+    .list-group
+      a.list-group-item(href="#", ng-click="showComleted('all')") Complited
+        span.glyphicon.glyphicon-ok.pull-right
+      a.list-group-item(href="#", ng-click="showTrash('all')") Trash
+        span.glyphicon.glyphicon-trash.pull-right
+
+

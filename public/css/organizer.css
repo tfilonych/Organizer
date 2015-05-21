@@ -1,0 +1,285 @@
+html, body, div.container-fluid, .cont {
+    height: 100%;
+}
+
+.content {
+    height: 80vh;
+}
+
+.container {
+  height: 100%;
+  border-radius: 5px;
+}
+.left-column {
+  background-color: #DAE4F2;
+  height: 90vh;
+}
+
+.header {
+  background: #555;
+  height: 55px;
+}
+.middle-column {
+  height: 90vh;
+  background-color: #F7F9FC;
+  overflow: auto;
+}
+.right-column {
+   height: 90vh;
+   background-color: #efefef;
+   color: #555;
+}
+.list-group-item:first-child {
+  margin-top: 10px;
+}
+a.list-group-item {
+  margin: 3px;
+}
+.input-lg {
+  margin: 10px;
+  background: #efefef;
+  width: 97%;
+}
+.small {
+  color: #555;
+}
+.input {
+   height: 38px;
+   border-radius: 3px;
+   padding-bottom: 14px;
+}
+.input:focus {
+    outline:none;
+}
+.task {
+  background: #efefef;
+  padding: 10px;
+  border-radius: 3px;
+  color: #555;
+  font-size: 15px;
+    margin-left: 25px;
+    width: 580px;
+}
+.detailTaskRow {
+  margin-top: 18px;
+  font-size: 18px;
+}
+.listWidth {
+  width: 156px;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+}
+.right-row {
+  color: #555;
+  border-bottom: 2px solid #DAE4F2;
+  font-size: 16px;
+  text-align: center;
+}
+
+.bgInput, .input {
+  background-color:transparent;
+  border: 0px solid;
+  margin-bottom: 20px;
+}
+.bgInput:focus {
+    outline:none;
+}
+ul:first-child {
+  margin-top: 10px;
+}
+.tick {
+  margin-right: 20px;
+}
+.clearfix:after {
+  display: table;
+  clear: both;
+  content: '';
+}
+.link {
+  margin-top: 10px;
+  height: 40px;
+}
+.collapse {
+  background: #DAE4F2;
+}
+.navbar-form  .form-group {
+  margin-right: 10px;
+}
+.navbar-form .button {
+  margin-left: 10px;
+}
+
+.toast-top-right {
+    top: 70px;
+}
+
+.toast-success {
+    background-color: #3071a9;
+}
+
+.profile {
+    background-color: #DAE4F2;
+    min-height: 500px;
+}
+.well.bg-prof {
+    background-color: #555;
+    color: #ffffff;
+    margin-top: 30px;
+}
+.login {
+    background-color: #555;
+    margin-top: 30px;
+    color: white;
+}
+
+.login .glyphicon {
+    color: #ffffff;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.login .form-horizontal .control-label {
+    text-align: left;
+}
+
+ul.nav.nav-pills {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.profile .btn.btn-primary {
+    margin-bottom: 10px;
+}
+
+.middle-column li {
+   list-style-type: none;
+}
+
+/* styles for list of tasks */
+
+.list-group {
+	overflow: hidden;
+	border-left: 1px solid rgb(221, 221, 221);
+	border-right: 1px solid rgb(221, 221, 221);
+}
+.list-group-item:first-child, .list-group-item:last-child {
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	overflow: hidden;
+}
+.list-group-item {
+	border-left: 0px solid rgb(221, 221, 221);
+	border-right: 0px solid rgb(221, 221, 221);
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.list-group-item > .show-menu {
+    position: absolute;
+    height: 100%; width:24px;
+    top: 0px; right: 0px;
+    background-color: rgba(51, 51, 51, 0.2);
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.list-group-item > .show-menu > span {
+    position: absolute;
+    top: 50%;
+    margin-top: -7px;
+    padding: 0px 5px;
+}
+.list-group-submenu {
+    position: absolute;
+    top: 0px;
+    right: -90px;
+    white-space: nowrap;
+    list-style: none;
+    padding-left: 0px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.list-group-submenu .list-group-submenu-item {
+    float: right;
+    white-space: nowrap;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: rgb(51, 51, 51);
+    color: rgb(235, 235, 235);
+}
+
+.open > .show-menu {
+    right: 88px;
+}
+.open .list-group-submenu{
+    right: 0px;
+}
+.list-group-submenu .list-group-submenu-item.primary {
+    color: rgb(255, 255, 255);
+    background-color: rgb(50, 118, 177);
+}
+.list-group-submenu .list-group-submenu-item.success {
+    color: rgb(255, 255, 255);
+    background-color: rgb(92, 184, 92);
+}
+.list-group-submenu .list-group-submenu-item.info {
+    color: rgb(255, 255, 255);
+    background-color: rgb(57, 179, 215);
+}
+.list-group-submenu .list-group-submenu-item.warning {
+    color: rgb(255, 255, 255);
+    background-color: rgb(240, 173, 78);
+}
+.list-group-submenu .list-group-submenu-item.danger {
+    color: rgb(255, 255, 255);
+    background-color: rgb(217, 83, 79);
+}
+
+/* end styles for list of tasks */
+
+input.edit {
+    margin: -3px;
+}
+
+button.categorySel {
+    position: relative;
+    top: -10px;
+    left: -30px;
+    height: 45px;
+    background: #efefef;
+    border: none;
+    border-right: 1px solid #ccc;
+    border-radius: 0px;
+}
+
+
+
+.active {
+    background: blue;
+    color: #f6f6f6;
+    display: block;
+    padding: 10px;
+}
+
+.image {
+    list-style-type: none;
+}
+
+.glyphicon-stop {
+    margin: 10px;
+}

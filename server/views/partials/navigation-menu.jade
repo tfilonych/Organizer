@@ -1,0 +1,16 @@
+ul.nav.nav-pills.pull-right(ng-controller="loginCtrl")
+    li(role="navigation")
+        a(href="/") Home
+    li(role="navigation", ng-hide="identity.isAuthenticated()")
+        a(href="/login") Log In
+    li.dropdown(role="navigation", ng-show = "identity.isAuthenticated()")
+        a.dropdown-toggle(data-toggle="dropdown" href="#" role="button" aria-expanded="false")
+            span {{identity.currentUser.firstName + ' ' + identity.currentUser.lastName}}
+            span.caret
+        ul.dropdown-menu(role="menu")
+            li
+                a(href="/profile") Profile
+            li
+                a(href="", ng-click="signout()") Sign Out
+
+

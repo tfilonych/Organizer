@@ -1,0 +1,37 @@
+.row
+  form.col-md-12.input-lg(data-ui-keypress="{13:'addTask($event)'}")
+    div.col-md-2
+        button.btn.btn-default.dropdown-toggle.categorySel(type="button", data-toggle="dropdown")
+            span.glyphicon(class="glyphicon-{{newCategory.icon}}") {{newCategory.name}}
+            span.caret
+        ul.dropdown-menu.text-center(role="menu")
+            li(role="presentation", ng-repeat="category in categories")
+                a(href="#", role="menuitem",  ng-click="changeMode(category)")
+                    span.glyphicon(class="glyphicon-{{category.icon}}") {{ category.name }}
+    input.col-md-7.input(type="text", ng-model="$parent.taskName", placeholder="Enter task")
+    span.col-md-2.small {{dt | date: 'dd/MM/yyyy'}}
+    span(datepicker-popup="{{format}}", ng-model="$parent.dt", is-open="$parent.opened",
+        datepicker-options="dateOptions", date-disabled="disabled(date, mode)" close-text="Close")
+    span.col-md-1.pull-right(ng-click="open($event)")
+      i.glyphicon.glyphicon-calendar
+  ul.col-md-12.cont.list-group(ng-repeat="task in $parent.tasks | filter: {status: taskStatus} | filter: filter")
+    li.col-md-12.task.list-group-item(ng-class="{open: task.menuOpen}")
+      input.col-md-1(type="checkbox", ng-model="selectedTask", ng-click="markCompleted(task)", name="selected", ng-hide='delTask')
+      span.col-md-8(ng-hide="task.taskEditable") {{task.taskName}} {{task.category}} {{task.status}} {{task.date | date:'dd-MM'}}
+      input.edit.bgInput(ng-show="task.taskEditable", ng-model="task.taskName")
+      span.show-menu(ng-click="task.menuOpen = !task.menuOpen", ng-hide='delTask')
+          span.glyphicon(ng-class="task.menuOpen ? 'glyphicon-chevron-right' : 'glyphicon-chevron-left'")
+      ul.list-group-submenu(ng-hide='delTask')
+          li.list-group-submenu-item.warning(ng-click="showSubTasks(task)")
+            span.glyphicon.glyphicon-plus
+          li.list-group-submenu-item.primary(ng-click="editTask(task)")
+            span.glyphicon.glyphicon-pencil(ng-hide="task.taskEditable")
+            span.glyphicon.glyphicon-ok(ng-show="task.taskEditable", ng-click="saveEditTask(task)")
+      span.glyphicon.glyphicon-remove.pull-right(ng-click="deleteTask(task)", ng-show="delTask")
+
+
+
+
+
+
+

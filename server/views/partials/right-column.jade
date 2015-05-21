@@ -1,0 +1,15 @@
+.row
+  .col-md-12.right-row.well-sm
+    span.currentDate.text-center {{today | date:'fullDate'}}
+  .table.col-md-12.detailTaskRow(ng-show="addedTask")
+    .nameOfTask
+      span {{currentTask.taskName}}
+      span.glyphicon.glyphicon-list.pull-right(ng-click="addedField()")  
+    div
+      input.bgInput(type="text", ng-model="$parent.subtask", placeholder="Enter subtask", data-ui-keypress="{13:'addsubtask(currentTask)'}")
+    ul.col-md-12.image(ng-repeat="subtask in $parent.subtasks track by $index")
+      li
+        span.glyphicon.glyphicon-stop.text-primary
+        span {{subtask.text}}
+        span.glyphicon.glyphicon-remove-circle.pull-right(ng-click="deleteSubtask($index, currentTask, subtask)")
+
